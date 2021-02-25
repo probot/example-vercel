@@ -14,7 +14,7 @@
     "probot": "^11.0.5"
   },
   "devDependencies": {
-    "nock": "^13.0.7",
+    "nock": "^13.0.8",
     "smee-client": "^1.2.2",
     "uvu": "^0.5.1"
   },
