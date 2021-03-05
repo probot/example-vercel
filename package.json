@@ -9,7 +9,7 @@
   },
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "ISC",
-  "repository": "https://github.com/probot/example-vercel",
+  "repository": "github:probot/example-vercel",
   "dependencies": {
     "probot": "^11.0.5"
   },
