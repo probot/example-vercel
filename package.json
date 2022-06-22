@@ -16,7 +16,7 @@
   "devDependencies": {
     "nock": "^13.2.7",
     "smee-client": "^1.2.3",
-    "uvu": "^0.5.3"
+    "uvu": "^0.5.4"
   },
   "release": {
     "branches": [
