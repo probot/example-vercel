@@ -32,6 +32,11 @@ The app is continuously deployed using [Vercel's GitHub app](https://github.com/
 
 The [api/github/webhooks/index.js](api/github/webhooks/index.js) file is handling requests to `POST /api/github/webhooks`, make sure to configure your GitHub App registration's webhook URL accordingly.
 
+## Other examples[^1]
+- [Using TypeScript + Vercel](https://github.com/oscard0m/example-vercel-ts) by [@oscard0m](https://github.com/oscard0m)
+
+[^1]: Do you have any other examples you would like to share? Feel free to open a Pull Request and share yours!
+
 ## License
 
 [ISC](LICENSE)
