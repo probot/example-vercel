@@ -2,35 +2,57 @@
 
 This repository is an example of how to deploy the "Hello, World" of probot apps to [Vercel](https://vercel.com).
 
-## Local setup
+## Create the GiHub App
 
-Install dependencies
+We will first start by running the app localy in order to create the GitHub App and initialize the environment variables.
 
+1. Install dependencies
 ```
 npm install
 ```
 
-Start the server
-
+2. Start the server
 ```
 npm start
 ```
 
-Follow the instructions to register a new GitHub app.
+3. Go to http://localhost:3000/, click `Register GitHub App` and select the app name of your choice.
 
-## Deployment
+4. Select the repository (or organization) where your GitHub App will be installed. _It can be completly different from the GitHub App repo_
 
-The app is continuously deployed using [Vercel's GitHub app](https://github.com/apps/vercel).
+Well done! Your GitHub app has been created but is not running yet. You can close the process with `Ctrl+C` in your terminal.
+Note that a file called `.env` has been created. It contains all the necessary informations to run your app localy or remotely.
 
-### Considerations
-- Make sure you configure [the environment variables for your GitHub App](https://probot.github.io/docs/configuration/) in Vercel. You can read more about how to do it in [their docs](https://vercel.com/docs/concepts/projects/environment-variables).
-- Vercel [expects to find your lambda functions under `/api` folder]([url](https://vercel.com/docs/concepts/functions/serverless-functions#deploying-serverless-functions)). Make sure your functions are placed there and double check Vercel detected your Lambda Functions during the deployment process by checking the logs:
+## Run localy
 
-![image](https://user-images.githubusercontent.com/2574275/187179364-b0019f95-be41-462a-97d5-facf4de39095.png)
+If you want to run your GitHub App localy, you can use
+```
+npm start
+```
 
-## How it works
+## Deploy on Vercel
 
-The [api/github/webhooks/index.js](api/github/webhooks/index.js) file is handling requests to `POST /api/github/webhooks`, make sure to configure your GitHub App registration's webhook URL accordingly.
+In this section, we will continuously deployed your GitHub App using [Vercel](https://vercel.com).
+
+1. On your vercel Dashboard, create a new a project.
+
+2. Select your GitHub App's repository.
+
+3. Select a project name and expand the `Environment Variables` view.
+
+4. Open the file `.env` and copy all the variables to Vercel Environment Variables.
+
+5. Hit deploy !
+
+Your app is now running on Vercel but it is not listening to the correct Webhook url.
+
+6. Go to your [GitHub App page](https://github.com/settings/apps) and `Edit` your app.
+
+7. Replace the `Webhook URL` with `https://<my-vercel-project-name>.vercel.app/api/github/webhooks`.
+
+8. Save
+
+Your GitHub App is now configured to send webhooks to your Vercel app. The [api/github/webhooks/index.js](api/github/webhooks/index.js) file is handling requests to `POST /api/github/webhooks`. You can now open an issue on the repo where your app is installed.
 
 ## Other examples[^1]
 - [Using TypeScript + Vercel](https://github.com/oscard0m/example-vercel-ts) by [@oscard0m](https://github.com/oscard0m)
