@@ -15,6 +15,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           cache: npm
-          node-version: 16
+          node-version: 24
       - run: npm ci
       - run: npm test
